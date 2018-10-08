@@ -1,20 +1,38 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CompanyInfo {
-    public class Company2 {
-        // Some readonly properties (let's talk about gets, baby)
-        public string Name { get; }
-        public DateTime CreatedOn { get; }
-        // Create a public property for holding a list of current employees
-        /*
-            Create a constructor method that accepts two arguments:
-                1. The name of the company
-                2. The date it was created
-            The constructor will set the value of the public properties
-        */
-    }
     class Program {
-        static void Main (string[] args) {
+        static void Main (string[] args)
+        {
+            Company LoomAndHammer = new Company()
+            {
+                CompanyName = "Loom & Hammer",
+                DateFounded = new DateTime(),
+                EmployeeList = new List<Employee>()
+            };
+            Employee Daniel = new Employee ()
+            {
+                FirstName = "Daniel",
+                LastName = "Figueroa",
+                Title = "Meme Maker",
+                StartDate = new DateTime()
+            };
+            Employee Ricky = new Employee ()
+            {
+                FirstName = "Ricky",
+                LastName = "Bruner",
+                Title = "CSS Master",
+                StartDate = new DateTime()
+            };
+            Employee Streator = new Employee ()
+            {
+                FirstName = "Streator",
+                LastName = "Ward",
+                Title = "Delivery",
+                StartDate = new DateTime()
+            };
+
             // Create an instance of a company. Name it whatever you like.
             // Create three employees
             // Assign the employees to the company
@@ -24,4 +42,4 @@ namespace CompanyInfo {
             */
         }
     }
-    }
+}
