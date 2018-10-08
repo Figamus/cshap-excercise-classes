@@ -5,12 +5,8 @@ namespace CompanyInfo {
     class Program {
         static void Main (string[] args)
         {
-            Company LoomAndHammer = new Company()
-            {
-                CompanyName = "Loom & Hammer",
-                DateFounded = new DateTime(),
-                EmployeeList = new List<Employee>()
-            };
+            Company LoomAndHammer = new Company("Loom & Hammer", new DateTime());
+
             Employee Daniel = new Employee ()
             {
                 FirstName = "Daniel",
@@ -33,13 +29,14 @@ namespace CompanyInfo {
                 StartDate = new DateTime()
             };
 
-            // Create an instance of a company. Name it whatever you like.
-            // Create three employees
-            // Assign the employees to the company
-            /*
-                Iterate the company's employee list and generate the
-                simple report shown above
-            */
+            LoomAndHammer.HireEmployee(Daniel);
+            LoomAndHammer.HireEmployee(Ricky);
+            LoomAndHammer.HireEmployee(Streator);
+
+            foreach (Employee employee in LoomAndHammer.EmployeeList)
+            {
+                Console.WriteLine($"{employee.FirstName} {employee.LastName}");
+            }
         }
     }
 }
